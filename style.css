@@ -83,6 +83,7 @@
     display: flex;
     gap: 1em;
     flex-wrap: wrap;
+    align-items: center;
   }
 
   .product {
@@ -116,6 +117,12 @@
     color: var(--Very-dark-blue-900)
     
 
+  }
+
+  .product__price {
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    color: var(--Dark-cyan-400);
   }
 
 
