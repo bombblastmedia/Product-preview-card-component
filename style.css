@@ -1,5 +1,6 @@
 :root {
 --Dark-cyan-400: hsl(158, 36%, 37%);
+--Dark-cyan-500-hover: hsl(158, 36%, 20%);
 --Cream-200: hsl(30, 38%, 92%);
 
 --Very-dark-blue-900: hsl(212, 21%, 14%);
@@ -66,6 +67,16 @@
     line-height: 1;
   }
 
+  .visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+  }
+
   /* general styling */
 
   body {
@@ -90,6 +101,7 @@
     --content-padding: 1.5em;
     --content-spacing: 1em;
 
+    display: grid;
     background-color: var(--White-100);
     border-radius: 0.5em;
     -webkit-border-radius: 0.5em;
@@ -97,6 +109,12 @@
     -ms-border-radius: 0.5em;
     -o-border-radius: 0.5em;
     overflow-y: hidden;
+  }
+
+  @media (min-width: 600px) {
+    .product {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   .product__content {
@@ -124,6 +142,40 @@
     font-family: var(--ff-accent);
     color: var(--Dark-cyan-400);
   }
+
+  .button {
+    cursor: pointer;
+    padding: 0.75em 1.5em;
+    border: 0;
+    border-radius: 0.5em;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    background-color: var(--Dark-cyan-400);
+    color: var(--White-100);
+    font-weight: var(--fw-bold);
+    font-size: 0.925rem;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+}
+
+.button[data-icon="shopping-cart"]::before {
+  content: "";
+  background-image:url("url('data:image/svg+xml,<svg width="15" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z" fill="%23FFF"/></svg>')");
+  width: 15px; 
+  height: 16px;
+
+}
+
+.button:is(:hover, :focus) {
+  background-color: var(--Dark-cyan-500-hover);
+
+}
+
 
 
 
