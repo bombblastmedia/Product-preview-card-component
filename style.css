@@ -109,10 +109,13 @@
     -ms-border-radius: 0.5em;
     -o-border-radius: 0.5em;
     overflow-y: hidden;
+    max-width: 600px;
+    margin-bottom: 1em;
   }
 
   @media (min-width: 600px) {
     .product {
+      --content-padding: 2em;
       grid-template-columns: 1fr 1fr;
     }
   }
@@ -180,7 +183,8 @@
 
 
   .attribution { 
-    font-size: 11px; text-align: center; 
+    font-size: 11px; 
+    text-align: center;     
     }
     .attribution a { 
         color: hsl(228, 45%, 44%); 
